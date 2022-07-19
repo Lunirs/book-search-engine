@@ -10,7 +10,7 @@ const LoginForm = () => {
   const [userFormData, setUserFormData] = useState({ email: "", password: "" });
   const [validated] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
-  const [login, { error, data }] = useMutation(LOGIN_USER);
+  const [login, { error }] = useMutation(LOGIN_USER);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -36,7 +36,7 @@ const LoginForm = () => {
     } catch (e) {
       console.error(e);
     }
-
+    console.log("hi");
     setUserFormData({
       username: "",
       email: "",

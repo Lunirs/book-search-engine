@@ -4,7 +4,7 @@ const { signToken } = require("../utils/auth");
 
 const resolvers = {
   Query: {
-    me: async (parent, context) => {
+    me: async (parent, args, context) => {
       if (context.user) {
         return User.findOne({ _id: context.user._id });
       }
@@ -36,24 +36,25 @@ const resolvers = {
     },
     saveBook: async (parent, { bookData }, context) => {
       if (context.user) {
-        return User.findOneAndUpdate(
+        const userData = await User.findByIdAndUpdate(
           {
             _id: context.user._id,
           },
           {
-            $addToSet: { savedBooks: bookData },
+            $push: { savedBooks: bookData },
           },
           {
             new: true,
           }
         );
+        return userData;
       }
 
       throw new AuthenticationError("Please log in.");
     },
     removeBook: async (parent, { bookId }, context) => {
       if (context.user) {
-        return User.findOneAndUpdate(
+        const userData = await User.findOneAndUpdate(
           {
             _id: context.user._id,
           },
@@ -64,6 +65,7 @@ const resolvers = {
             new: true,
           }
         );
+        return userData;
       }
       throw new AuthenticationError("Please log in.");
     },
