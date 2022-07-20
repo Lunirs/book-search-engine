@@ -37,19 +37,19 @@ Please see the images below that shows the webpage in action!
 
 ### Homepage
 
-![screenshot]()
-
-### Search
-
-![screenshot]()
+![screenshot](./client/src/assets/img/homepage.png)
 
 ### Log in
 
-![screenshot]()
+![screenshot](./client/src/assets/img/login.png)
+
+### Search
+
+![screenshot](./client/src/assets/img/search.png)
 
 ### Book List
 
-![screenshot]()
+![screenshot](./client/src/assets/img/savedbook.png)
 
 ## Questions
 
