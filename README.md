@@ -7,6 +7,8 @@
 Utilizing the google books API, search for any available book and save it to your own list to have books you would like to read in the future!
 This MERN stack application allows user to search for any book utilizing the google books api. If the user is logged in, they will be able to save books into their list or also delete books from their list.
 
+### If you would like to try it out, click [here](https://lunirs-book-search.herokuapp.com/)!
+
 ## Table of Contents
 
 1. [Installation](#installation)
